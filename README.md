@@ -23,7 +23,8 @@ This is a simple and elegant online code editor that allows users to write and r
 2.Ace Editor
 
 ✨ Credits
-Built with 💻 by [moksha-132].
+
+Built with 💻 by Lakshmi Moksha Boya.
 
 A minimal, fast, and beginner-friendly live code editor.
 
