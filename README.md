@@ -1,29 +1,77 @@
-🌐 Live Code Editor (HTML, CSS, JS) This is a simple and elegant online code editor that allows users to write and run HTML, CSS, and JavaScript directly in the browser — with a built-in result preview panel.
+# Online Live Code Editor (HTML, CSS, JavaScript)
 
-🚀 Features
+This project is a lightweight, browser-based code editor that enables users to write and run HTML, CSS, and JavaScript in real time.
+It provides a clean interface with separate editor panels and a live preview window, making it ideal for beginners, learners, and developers experimenting with frontend code.
 
-Real-time output preview
+---
 
-Syntax highlighting with Ace Editor
+# Tech Stack
 
-Smooth tabbed interface for HTML, CSS, and JavaScript
+*HTML5* – Structure of the editor and preview layout
 
-📂 How to Use
+*CSS3* – Styling for layout, tabs, and UI components
 
-Clone this repository or download the files.
+*JavaScript* – Logic for compiling and rendering user code
 
-Open index.html in your browser.
+*Ace Editor* – Advanced code editor with syntax highlighting, themes, and keybindings
 
-Write code in the editor tabs (HTML, CSS, JS).
+---
 
-Click the “Result” button to compile and preview your code instantly.
+#Features
 
-🛠 Built With 1.HTML, CSS, JavaScript
+*Real-Time Output Preview*
+- Instantly see the result of your HTML, CSS, and JavaScript code.
 
-2.Ace Editor
 
-✨ Credits
+*Syntax Highlighting*
+- Powered by Ace Editor for smooth and readable coding.
 
-Built with 💻 by Lakshmi Moksha Boya.
+*Tabbed Editing Interface*
+- Switch effortlessly between HTML, CSS, and JS panels.
 
-A minimal, fast, and beginner-friendly live code editor.
+*Instant Compilation*
+- Generates the combined output and renders it inside the preview frame.
+
+*Lightweight & Fast*
+- Runs entirely in the browser with no server required.
+
+*Beginner-Friendly UI*
+- Simple layout ideal for students or anyone learning web development.
+
+*Browser-Based*
+- Works locally without any installation or backend setup.
+
+---
+
+# How to Use
+
+- Clone or download this repository.
+
+- Open index.html in your browser.
+
+- Write your code in the respective HTML, CSS, and JS editor tabs.
+
+- Click the Result button to generate the live preview.
+
+- Modify code anytime and instantly re-run for updated output.
+
+---
+
+# Use Cases
+
+- Practicing HTML, CSS, and JavaScript
+
+- Teaching web development
+
+- Creating demos and small prototypes
+
+- Testing UI elements quickly
+
+- Embedding in educational blogs or coding courses
+
+---
+
+# Credits
+
+Developed by *Lakshmi Moksha Boya*.
+Designed to be a simple, fast, and intuitive live code editor for learners and developers.
