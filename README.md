@@ -1,4 +1,4 @@
-# Online Live Code Editor 🚀
+# Online Live Code Editor 
 
 A premium, professional-grade online code editor built with HTML, CSS, and JavaScript. This platform provides a sleek playground for front-end developers to experiment with code in real-time.
 
