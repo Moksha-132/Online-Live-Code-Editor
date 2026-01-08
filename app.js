@@ -171,16 +171,60 @@ document.addEventListener('keydown', (e) => {
 
 switchPanel(0);
 
-function downloadCode() {
+async function downloadCode() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
   const html = htmlEditor.getValue();
   const css = cssEditor.getValue();
   const js = jsEditor.getValue();
-  const code = `--- HTML ---\\n${html}\\n\\n--- CSS ---\\n${css}\\n\\n--- JavaScript ---\\n${js}`;
-  const blob = new Blob([code], { type: "text/plain" });
 
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "code.txt";
-  a.click();
-  URL.revokeObjectURL(a.href);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(22);
+  doc.text("Code Editor Export", 20, 20);
+
+  doc.setFontSize(16);
+  doc.setTextColor(100, 100, 100);
+  doc.text(`Generated on: ${new Date().toLocaleString()}`, 20, 30);
+
+  // HTML Section
+  doc.setFontSize(18);
+  doc.setTextColor(124, 77, 255); // Purple accent
+  doc.text("--- HTML ---", 20, 50);
+  doc.setFont("courier", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(0, 0, 0);
+  const htmlLines = doc.splitTextToSize(html, 170);
+  doc.text(htmlLines, 20, 60);
+
+  // Check for page break or new page
+  let currentY = 60 + (htmlLines.length * 5);
+  if (currentY > 250) { doc.addPage(); currentY = 20; } else { currentY += 10; }
+
+  // CSS Section
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(18);
+  doc.setTextColor(124, 77, 255);
+  doc.text("--- CSS ---", 20, currentY);
+  doc.setFont("courier", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(0, 0, 0);
+  const cssLines = doc.splitTextToSize(css, 170);
+  doc.text(cssLines, 20, currentY + 10);
+
+  currentY = currentY + 10 + (cssLines.length * 5);
+  if (currentY > 250) { doc.addPage(); currentY = 20; } else { currentY += 10; }
+
+  // JS Section
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(18);
+  doc.setTextColor(124, 77, 255);
+  doc.text("--- JavaScript ---", 20, currentY);
+  doc.setFont("courier", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(0, 0, 0);
+  const jsLines = doc.splitTextToSize(js, 170);
+  doc.text(jsLines, 20, currentY + 10);
+
+  doc.save("code_expert_export.pdf");
 }
