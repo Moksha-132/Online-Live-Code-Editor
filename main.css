@@ -213,6 +213,8 @@ body {
   width: 100%;
   height: 750px;
   position: relative;
+  background: white;
+  /* Base white shade for code area */
 }
 
 .panel-wrapper {
@@ -249,18 +251,21 @@ body {
 
 /* Ace Editor Customization */
 .ace_editor {
-  background-color: transparent !important;
+  background-color: #f8fafc !important;
+  /* Perfect white shade */
   font-family: 'Fira Code', 'Monaco', 'Menlo', monospace !important;
-  font-size: 15px !important;
+  font-size: 16px !important;
+  color: #1e293b !important;
 }
 
 .ace_gutter {
-  background: rgba(0, 0, 0, 0.2) !important;
-  color: #4b5563 !important;
+  background: #f1f5f9 !important;
+  color: #64748b !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 .ace_active-line {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
 }
 
 @media (max-width: 768px) {

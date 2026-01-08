@@ -24,10 +24,9 @@ let currentTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', currentTheme);
 
 function updateEditorThemes() {
-  const theme = currentTheme === 'dark' ? config.darkTheme : config.lightTheme;
-  htmlEditor.setTheme(theme);
-  cssEditor.setTheme(theme);
-  jsEditor.setTheme(theme);
+  htmlEditor.setTheme(config.theme);
+  cssEditor.setTheme(config.theme);
+  jsEditor.setTheme(config.theme);
 
   // Update icons
   document.getElementById('sun-icon').style.display = currentTheme === 'dark' ? 'block' : 'none';
