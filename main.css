@@ -11,10 +11,24 @@
   --blob-opacity: 0.4;
 }
 
+[data-theme="light"] {
+  --bg-color: #f0f2f5;
+  --panel-bg: rgba(255, 255, 255, 0.8);
+  --accent-color: #6366f1;
+  --accent-secondary: #0ea5e9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --btn-bg: rgba(0, 0, 0, 0.03);
+  --blob-opacity: 0.2;
+}
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
@@ -73,8 +87,35 @@ body {
 }
 
 .header-wrap {
-  padding: 60px 20px 40px;
+  padding: 40px 20px 30px;
   text-align: center;
+  position: relative;
+}
+
+.theme-switch-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-btn {
+  background: var(--btn-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: rotate(15deg);
 }
 
 .header-wrap h1 {

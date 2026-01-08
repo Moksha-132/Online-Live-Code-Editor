@@ -20,8 +20,28 @@ function compiler() {
   result.close();
 }
 
+let currentTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+function updateEditorThemes() {
+  const theme = currentTheme === 'dark' ? config.darkTheme : config.lightTheme;
+  htmlEditor.setTheme(theme);
+  cssEditor.setTheme(theme);
+  jsEditor.setTheme(theme);
+
+  // Update icons
+  document.getElementById('sun-icon').style.display = currentTheme === 'dark' ? 'block' : 'none';
+  document.getElementById('moon-icon').style.display = currentTheme === 'dark' ? 'none' : 'block';
+}
+
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  localStorage.setItem('theme', currentTheme);
+  updateEditorThemes();
+});
+
 var htmlEditor = ace.edit("html");
-htmlEditor.setTheme(config.theme);
 htmlEditor.session.setMode("ace/mode/html");
 htmlEditor.setValue(`<!-- Premium Neon Clock -->
 <div class="clock-wrap">
@@ -34,7 +54,6 @@ htmlEditor.setOptions({ showPrintMargin: false, fontSize: config.font, tabSize: 
 htmlEditor.setHighlightActiveLine(true);
 
 var cssEditor = ace.edit("css");
-cssEditor.setTheme(config.theme);
 cssEditor.session.setMode("ace/mode/css");
 cssEditor.setValue(`/* Neon Glassmorphism Clock */
 :root {
@@ -92,7 +111,6 @@ cssEditor.setOptions({ showPrintMargin: false, fontSize: config.font, tabSize: c
 cssEditor.setHighlightActiveLine(true);
 
 var jsEditor = ace.edit("js");
-jsEditor.setTheme(config.theme);
 jsEditor.session.setMode("ace/mode/javascript");
 jsEditor.setValue(`// Smooth Real-time Clock Logic
 function updateClock() {
@@ -120,6 +138,8 @@ setInterval(updateClock, 1000);
 updateClock();`, 1);
 jsEditor.setOptions({ showPrintMargin: false, fontSize: config.font, tabSize: config.tabSize });
 jsEditor.setHighlightActiveLine(true);
+
+updateEditorThemes();
 
 const allButtons = document.querySelectorAll(".nav-btn");
 const allPanels = document.querySelectorAll(".panel-wrapper");
