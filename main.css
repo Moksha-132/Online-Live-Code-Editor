@@ -1,0 +1,242 @@
+:root {
+  --bg-color: #0c0d11;
+  --panel-bg: rgba(23, 25, 33, 0.7);
+  --accent-color: #7c4dff;
+  --accent-secondary: #00e5ff;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  --btn-bg: rgba(255, 255, 255, 0.05);
+  --blob-opacity: 0.4;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Blobs */
+.background-blobs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(80px);
+  opacity: var(--blob-opacity);
+}
+
+.blob {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+}
+
+.blob-1 {
+  background: var(--accent-color);
+  top: -10%;
+  left: -10%;
+  animation: float 20s infinite alternate;
+}
+
+.blob-2 {
+  background: var(--accent-secondary);
+  bottom: -10%;
+  right: -10%;
+  animation: float 25s infinite alternate-reverse;
+}
+
+@keyframes float {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(10%, 10%) scale(1.1);
+  }
+}
+
+.header-wrap {
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+
+.header-wrap h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-wrap p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+#ide-parent {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+#button-wrapper {
+  display: flex;
+  padding: 16px;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--glass-border);
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--btn-bg);
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.nav-btn.active {
+  background: rgba(124, 77, 255, 0.15);
+  border-color: rgba(124, 77, 255, 0.3);
+  color: var(--accent-color);
+}
+
+.action-run {
+  margin-left: auto;
+  background: var(--accent-color) !important;
+  color: white !important;
+  border: none;
+}
+
+.action-run:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 15px rgba(124, 77, 255, 0.4);
+}
+
+.action-download {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+}
+
+#ide-container {
+  width: 100%;
+  height: 750px;
+  position: relative;
+}
+
+.panel-wrapper {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#html,
+#css,
+#js {
+  width: 100%;
+  height: 100%;
+}
+
+#result {
+  width: 100%;
+  height: 100%;
+  background: #f8fafc;
+  border: none;
+}
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  border-top: 1px solid var(--glass-border);
+}
+
+/* Ace Editor Customization */
+.ace_editor {
+  background-color: transparent !important;
+  font-family: 'Fira Code', 'Monaco', 'Menlo', monospace !important;
+  font-size: 15px !important;
+}
+
+.ace_gutter {
+  background: rgba(0, 0, 0, 0.2) !important;
+  color: #4b5563 !important;
+}
+
+.ace_active-line {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+@media (max-width: 768px) {
+  #ide-parent {
+    width: 98%;
+  }
+
+  #button-wrapper {
+    justify-content: center;
+  }
+
+  .action-run {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-btn span {
+    display: none;
+  }
+
+  #ide-container {
+    height: 500px;
+  }
+}

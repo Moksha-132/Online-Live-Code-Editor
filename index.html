@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online, Live Code Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="description" content="Live code editor for HTML, CSS, and JS" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="header-wrap">
+    <h1>Online <span class="gradient-text">Live Code</span> Editor</h1>
+    <p>A premium playground for your web ideas</p>
+  </div>
+
+  <div id="ide-parent">
+    <div id="button-wrapper">
+      <button class="nav-btn active" onclick="switchPanel(0)"><i data-lucide="code-2"></i><span>HTML</span></button>
+      <button class="nav-btn" onclick="switchPanel(1)"><i data-lucide="palette"></i><span>CSS</span></button>
+      <button class="nav-btn" onclick="switchPanel(2)"><i data-lucide="braces"></i><span>JS</span></button>
+      <button class="nav-btn action-run" onclick="runEdit(3)"><i data-lucide="play"></i><span>Result</span></button>
+      <button class="nav-btn action-download" onclick="downloadCode()"><i
+          data-lucide="download"></i><span>Download</span></button>
+    </div>
+
+    <div id="ide-container">
+      <div class="panel-wrapper">
+        <div id="html"></div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="css"></div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="js"></div>
+      </div>
+      <div class="panel-wrapper"><iframe id="result"></iframe></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&#169; Made By Moksha</p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js"></script>
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
