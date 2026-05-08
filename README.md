@@ -2,7 +2,7 @@
 
 A premium, professional-grade online code editor built with HTML, CSS, and JavaScript. This platform provides a sleek playground for front-end developers to experiment with code in real-time.
 
-## ✨ Features
+##  Features
 
 - **Double-Mode Theme Toggle**: Seamlessly switch between high-contrast Dark and professional Light modes.
 - **Glassmorphic Design**: A modern UI with backdrop blurs, neon accents, and mesh gradients.
@@ -11,7 +11,7 @@ A premium, professional-grade online code editor built with HTML, CSS, and JavaS
 - **Ace Editor Integration**: Powered by Ace Editor for a robust, IDE-like experience with syntax highlighting and auto-resizing.
 - **Responsive Layout**: Designed to work across different screen sizes with an expansive coding area.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **HTML5 & CSS3**: Custom modern styling with CSS variables.
 - **JavaScript (ES6+)**: Core logic for theme switching, code compilation, and PDF generation.
@@ -19,7 +19,7 @@ A premium, professional-grade online code editor built with HTML, CSS, and JavaS
 - **jsPDF**: For high-quality PDF exports.
 - **Lucide Icons**: For clean and modern UI iconography.
 
-## 🚀 Getting Started
+##  Getting Started
 
 1. Clone the repository.
 2. Open `index.html` in your favorite web browser.

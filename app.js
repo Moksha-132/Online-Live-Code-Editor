@@ -79,7 +79,7 @@ button:hover {
   jsEditor.session.setMode("ace/mode/javascript");
   jsEditor.setValue(`// Simple Interactive Logic
 function greet() {
-  alert("The editor is ready for your code! 🚀");
+  alert("The editor is ready for your code! ");
 }`, 1);
   jsEditor.setOptions({ showPrintMargin: false, fontSize: config.font, tabSize: config.tabSize });
   jsEditor.setHighlightActiveLine(true);
